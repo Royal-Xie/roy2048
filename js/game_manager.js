@@ -62,7 +62,44 @@ GameManager.prototype.addStartTiles = function () {
 // Adds a tile in a random position
 GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
-    var value = Math.random() < 0.9 ? 2 : 4;
+	if (this.score >= 40000 && this.score < 100000) {
+		this.grid.eachCell(function (x, y, tile) {
+			if (tile && tile.value < 16) {
+			  tile.value = 16
+			}
+		  });
+		var value = Math.random() < 0.9 ? 16 : 32;
+	} else if (this.score >= 100000 && this.score < 400000) {
+		this.grid.eachCell(function (x, y, tile) {
+			if (tile && tile.value < 32) {
+			  tile.value = 32
+			}
+		  });
+		var value = Math.random() < 0.9 ? 32 : 64;
+	} else if (this.score >= 400000 && this.score < 1000000) {
+		this.grid.eachCell(function (x, y, tile) {
+			if (tile && tile.value < 64) {
+			  tile.value = 64
+			}
+		  });
+		var value = Math.random() < 0.9 ? 64 : 128;
+	} else if (this.score >= 1000000 && this.score < 3000000) {
+		this.grid.eachCell(function (x, y, tile) {
+			if (tile && tile.value < 128) {
+			  tile.value = 128
+			}
+		  });
+		  		var value = Math.random() < 0.9 ? 128 : 256;
+	} else if (this.score >= 3000000) {
+		this.grid.eachCell(function (x, y, tile) {
+			if (tile && tile.value < 256) {
+			  tile.value = 256
+			}
+		  });
+		var value = Math.random() < 0.9 ? 256 : 512;
+	}else {
+	   var value = Math.random() < 0.9 ? 2 : 4;
+	}
     var tile = new Tile(this.grid.randomAvailableCell(), value);
 
     this.grid.insertTile(tile);
@@ -146,7 +183,7 @@ GameManager.prototype.move = function (direction) {
             maxscore = merged.value;
 
           // The mighty 131072 tile
-          if (merged.value === 131072) self.won = true;
+          if (merged.value === 1048576) self.won = true;
         } else {
           self.moveTile(tile, positions.farthest);
         }

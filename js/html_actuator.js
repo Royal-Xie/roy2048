@@ -52,7 +52,7 @@ HTMLActuator.prototype.clearContainer = function (container) {
 };
 
 HTMLActuator.prototype.addTile = function (tile) {
-  var text=new Array(18);
+  var text=new Array(20);
   text[0] = " ";
   text[1] = " ";
   text[2] = " ";
@@ -71,6 +71,8 @@ HTMLActuator.prototype.addTile = function (tile) {
   text[15] = " ";
   text[16] = " ";
   text[17] = " ";
+text[18] = " ";
+text[19] = " ";
   var self = this;
   var text2 = function (n) { var r = 0; while (n > 1) r++, n >>= 1; return r; }
 
@@ -82,7 +84,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
-  if (tile.value > 131072) classes.push("tile-super");
+  if (tile.value > 1048576) classes.push("tile-super");
 
   this.applyClasses(wrapper, classes);
 
