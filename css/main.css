@@ -419,6 +419,18 @@ hr {
     background: url(../img/p17.png);
 	background-size:contain;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333); }
+ .tile.tile-262144 .tile-inner {
+    background: url(../img/p18.png);
+	background-size:contain;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333); }
+ .tile.tile-524288 .tile-inner {
+    background: url(../img/p19.png);
+	background-size:contain;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333); }
+ .tile.tile-1048576 .tile-inner {
+    background: url(../img/p20.png);
+	background-size:contain;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333); }
   .tile.tile-super .tile-inner {
     color: #f9f6f2;
     background: #3c3a32;
@@ -628,7 +640,8 @@ hr {
         color: #f9f6f2;
         height: 40px;
         line-height: 42px;
-        margin-left: 9px; }
+        margin-left: 9px; 
+		opacity: 0.5;}
         .game-container .game-message a.keep-playing-button {
           display: none; }
       .game-container .game-message .score-sharing {
@@ -636,7 +649,7 @@ hr {
         vertical-align: middle;
         margin-left: 10px; }
       .game-container .game-message.game-won {
-        background: rgba(237, 194, 46, 0.5);
+        background: url(../img/win.png);
         color: #f9f6f2; }
         .game-container .game-message.game-won a.keep-playing-button {
           display: inline-block; }
